@@ -7,12 +7,12 @@
     "https://v6.exchangerate-api.com/*"
   ],
    "icons": {
-    "16": "images/cc-home-logo-16.png",
-    "48": "images/cc-home-logo-48.png",
-    "128": "images/cc-home-logo-128.png"
+    "16": "images/home-logo.png",
+    "48": "images/home-logo.png",
+    "128": "images/home-logo.png"
   },
   "action": {
-    "default_icon": "images/cc-home-logo.png",
+    "default_icon": "images/home-logo.png",
     "default_popup": "CurrencyConverter.html"
   }
 }
