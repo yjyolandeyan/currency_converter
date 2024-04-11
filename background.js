@@ -1,1 +1,1 @@
- console.log(text);
+ console.log("Hi");
