@@ -12,7 +12,7 @@
     "128": "images/home-logo.png"
   },
   "action": {
-    "default_icon": "home-logo.png",
+    "default_icon": ".images/home-logo.png",
     "default_popup": "popup.html"
   }
 }
