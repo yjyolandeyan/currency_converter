@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Currency Converter",
+  "description": "This extension fetches the currency rate and outputs the desired valud in the new currency value based on user input.",
+  "version": "1.0",
+  "host_permissions": [
+    "https://v6.exchangerate-api.com/*"
+  ],
+  "action": {
+    "default_icon": "images/home-logo.png",
+    "default_popup": "CurrencyConverter.html"
+  }
+}
