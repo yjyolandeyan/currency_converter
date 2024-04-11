@@ -8,6 +8,6 @@
   ],
   "action": {
     "default_icon": "images/home-logo.png",
-    "default_popup": "CurrencyConverter.html"
+    "default_popup": "popup.html"
   }
 }
