@@ -7,12 +7,12 @@
     "https://v6.exchangerate-api.com/*"
   ],
   "icons": {
-    "16": "images/home-logo.png",
-    "48": "images/home-logo.png",
-    "128": "images/home-logo.png"
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
   },
   "action": {
-    "default_icon": "images/home-logo.png",
+    "default_icon": "images/icon.png",
     "default_popup": "popup.html"
-  },
+  }
 }
