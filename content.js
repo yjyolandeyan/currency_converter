@@ -21,7 +21,14 @@ document.addEventListener("mouseup", function (e) {
     if (/^[\$£€]?\d*\.?\d+$/.test(selectedText)) {
       // Extract just the numeric part if there's a leading symbol
       var numericPart = selectedText.replace(/^[^\d]+/, "");
-      popup.textContent = numericPart;
+      chrome.storage.local.get(["conversionRate"], function (result) {
+        if (result.conversionRate) {
+          var convertedValue = parseFloat(numericPart) * result.conversionRate;
+          popup.textContent = convertedValue.toFixed(2);
+        } else {
+          popup.textContent = "Conversion rate not available.";
+        }
+      });
     } else {
       popup.textContent = "Please select a price"; // Show this message if the selection is not a number
     }

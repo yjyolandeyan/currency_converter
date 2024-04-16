@@ -3,10 +3,8 @@
   "name": "Currency Converter",
   "description": "This extension fetches the currency rate.",
   "version": "1.0",
-  "host_permissions": [
-    "https://v6.exchangerate-api.com/*"
-  ],
-  "permissions": ["activeTab"],
+  "host_permissions": ["https://v6.exchangerate-api.com/*"],
+  "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
