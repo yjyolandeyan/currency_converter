@@ -22,8 +22,8 @@ function getConversionRate(apiKey, fromCurrency, toCurrency, callback) {
   // This function will be called when the user submits their currency choices
   function convertCurrency() {
     // Retrieve the user's 'From' and 'To' currency choices
-    const fromCurrency = document.getElementById('fromCcy').value;
-    const toCurrency = document.getElementById('toCcy').value;
+    const fromCurrency = document.getElementById('fromCurrency').value;
+    const toCurrency = document.getElementById('toCurrency').value;
   
     // Your API key (user input if required)
     const apiKey = 'b3e63b774929d44486c735f7';
@@ -38,9 +38,10 @@ function getConversionRate(apiKey, fromCurrency, toCurrency, callback) {
       }
     });
   }
+
   
   document.addEventListener('DOMContentLoaded', function() {
-    const submitButton = document.getElementById('submit');
+    const submitButton = document.getElementById('submit'); 
     submitButton.addEventListener('click', convertCurrency);
   });
-  
+
