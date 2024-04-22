@@ -43,4 +43,13 @@ function getConversionRate(apiKey, fromCurrency, toCurrency, callback) {
     const submitButton = document.getElementById('submit');
     submitButton.addEventListener('click', convertCurrency);
   });
+
+  //receive the price data from the content script and send it to the popup script
+  // background.js
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === 'prices') {
+    chrome.runtime.sendMessage({ action: 'updatePrices', data: request.data });
+  }
+});
+
   
