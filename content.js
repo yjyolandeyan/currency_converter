@@ -18,13 +18,13 @@ document.addEventListener("mouseup", function (e) {
     }
 
     // Check if the selection is a number (including decimals)
-    if (/^[\$£€]?\d*\.?\d+$/.test(selectedText)) {
-      // Extract just the numeric part if there's a leading symbol
-      var numericPart = selectedText.replace(/^[^\d]+/, "");
+    if (/[\$£€]?\d{1,3}(?:,\d{3})*\.?\d*/.test(selectedText)) {
+      // Remove any non-numeric characters except the decimal point for conversion calculation
+      var numericPart = selectedText.replace(/[^\d.]/g, "");
       chrome.storage.local.get(["conversionRate"], function (result) {
         if (result.conversionRate) {
           var convertedValue = parseFloat(numericPart) * result.conversionRate;
-          popup.textContent = convertedValue.toFixed(2);
+          popup.textContent = `${convertedValue.toFixed(2)}`;
         } else {
           popup.textContent = "Conversion rate not available.";
         }
@@ -32,6 +32,7 @@ document.addEventListener("mouseup", function (e) {
     } else {
       popup.textContent = "Please select a price"; // Show this message if the selection is not a number
     }
+    
 
     var range = selection.getRangeAt(0);
     var rect = range.getBoundingClientRect();
@@ -51,4 +52,29 @@ document.addEventListener("mousedown", function (e) {
   if (popup && e.target !== popup) {
     popup.style.display = "none";
   }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  var prices = [];
+  document.querySelectorAll('body *').forEach(function(node) {
+    if (node.childNodes.length === 1 && node.nodeType === Node.TEXT_NODE) {
+      var regex = /[\$£€]?\d{1,3}(?:,\d{3})*\.?\d*/g;
+      var matches = node.textContent.match(regex);
+      if (matches) {
+        matches.forEach(function(match) {
+          var price = parseFloat(match.replace(/[\$,£,€]/g, '').replace(/,/g, ''));
+          if (!isNaN(price)) {
+            prices.push(price);
+          }
+        });
+      }
+    }
+  });
+
+  prices.sort((a, b) => a - b);
+
+  chrome.storage.local.set({prices: prices}, function() {
+    console.log("Prices sorted and stored.");
+  });
 });

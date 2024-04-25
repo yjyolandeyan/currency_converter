@@ -47,7 +47,27 @@ function convertCurrency() {
   });
 }
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("submit");
-  submitButton.addEventListener("click", convertCurrency);
+  submitButton.addEventListener("click", function() {
+    convertCurrency();
+    displaySortedPrices();
+  });
 });
+
+function displaySortedPrices() {
+  chrome.storage.local.get(["prices"], function(result) {
+    if (result.prices) {
+      const priceList = document.getElementById("priceList");
+      priceList.innerHTML = '';
+      result.prices.forEach(price => {
+        let listItem = document.createElement("li");
+        listItem.textContent = `${price.toFixed(2)}`;
+        priceList.appendChild(listItem);
+      });
+    }
+  });
+}
+
+
