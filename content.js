@@ -54,27 +54,16 @@ document.addEventListener("mousedown", function (e) {
   }
 });
 
-
-document.addEventListener("DOMContentLoaded", function () {
-  var prices = [];
-  document.querySelectorAll('body *').forEach(function(node) {
-    if (node.childNodes.length === 1 && node.nodeType === Node.TEXT_NODE) {
-      var regex = /[\$£€]?\d{1,3}(?:,\d{3})*\.?\d*/g;
-      var matches = node.textContent.match(regex);
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.type === "getPrices") {
+      const regex = /(?<![-+])\$\d[\d,]*(\.\d+)?\b/g;
+      const matches = document.body.innerText.match(regex);
       if (matches) {
-        matches.forEach(function(match) {
-          var price = parseFloat(match.replace(/[\$,£,€]/g, '').replace(/,/g, ''));
-          if (!isNaN(price)) {
-            prices.push(price);
-          }
-        });
+          const matchesFiltered = matches.map(match => match.replaceAll(',', ''));
+          const sortedPrices = [...new Set(matchesFiltered)].sort((a, b) => parseFloat(a.slice(1)) - parseFloat(b.slice(1)));
+          sendResponse({prices: sortedPrices});
+      } else {
+          sendResponse({prices: null});
       }
-    }
-  });
-
-  prices.sort((a, b) => a - b);
-
-  chrome.storage.local.set({prices: prices}, function() {
-    console.log("Prices sorted and stored.");
-  });
+  }
 });

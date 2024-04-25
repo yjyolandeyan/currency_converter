@@ -54,6 +54,20 @@ document.addEventListener("DOMContentLoaded", function () {
     convertCurrency();
     displaySortedPrices();
   });
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {type: "getPrices"}, function(response) {
+        const priceList = document.getElementById('priceList');
+        if (response && response.prices) {
+            response.prices.forEach(price => {
+                let li = document.createElement('li');
+                li.textContent = price;
+                priceList.appendChild(li);
+            });
+        } else {
+            priceList.textContent = 'No prices found.';
+        }
+    });
+  });
 });
 
 function displaySortedPrices() {
