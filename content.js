@@ -32,7 +32,6 @@ document.addEventListener("mouseup", function (e) {
     } else {
       popup.textContent = "Please select a price"; // Show this message if the selection is not a number
     }
-    
 
     var range = selection.getRangeAt(0);
     var rect = range.getBoundingClientRect();
@@ -54,16 +53,17 @@ document.addEventListener("mousedown", function (e) {
   }
 });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.type === "getPrices") {
-      const regex = /(?<![-+])\$\d[\d,]*(\.\d+)?\b/g;
-      const matches = document.body.innerText.match(regex);
-      if (matches) {
-          const matchesFiltered = matches.map(match => match.replaceAll(',', ''));
-          const sortedPrices = [...new Set(matchesFiltered)].sort((a, b) => parseFloat(a.slice(1)) - parseFloat(b.slice(1)));
-          sendResponse({prices: sortedPrices});
-      } else {
-          sendResponse({prices: null});
-      }
+    const regex = /(?<![-+])\$\d[\d,]*(\.\d+)?\b/g;
+    const matches = document.body.innerText.match(regex);
+    if (matches) {
+      var matchesFiltered = matches.map((match) => match.replaceAll(",", ""));
+      matchesFiltered = matches.map((match) => match.replaceAll("$", ""));
+      const sortedPrices = [...new Set(matchesFiltered)].sort((a, b) => a - b);
+      sendResponse({ prices: sortedPrices });
+    } else {
+      sendResponse({ prices: null });
+    }
   }
 });

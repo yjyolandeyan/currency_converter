@@ -1,87 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Currency Conversion</title>
-  <style type="text/css">
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-    }
-    .container {
-      width: 300px;
-      padding: 20px;
-      margin-top: 50px;
-      margin-left: auto;
-      margin-right: auto;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 4px;
-      background-color: #333;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      display: block;
-      margin-top: 10px;
-    }
-    .title {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    .result-container {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #f2f2f2;
-      border-radius: 4px;
-      text-align: center;
-    }
-    .result-container span {
-      font-size: 18px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="title">Currency Converter</div>
-    
-    <div><label>From Currency</label></div>
-    <input type="text" id="fromCurrency" value="USD">
-    
-    <div><label>To Currency</label></div>
-    <input type="text" id="toCurrency" value="EUR">
-    
-    <button type="button" id="submit">Submit</button>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Currency Conversion</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+      }
+      .container {
+        width: 300px;
+        padding: 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #333;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+        margin-top: 10px;
+      }
+      .title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .result-container {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-radius: 4px;
+        text-align: center;
+      }
+      .result-container span {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .result-container ul {
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Currency Converter</div>
 
-    <div class="result-container">
-      <span id="result"></span>
+      <div><label>From Currency</label></div>
+      <input type="text" id="fromCurrency" value="USD" />
+
+      <div><label>To Currency</label></div>
+      <input type="text" id="toCurrency" value="EUR" />
+
+      <button type="button" id="submit">Submit</button>
+
+      <div class="result-container">
+        <span id="result"></span>
+      </div>
+
+      <div class="result-container" id="priceRangeContainer">
+        <h3>Price Range</h3>
+        <ul id="priceRange"></ul>
+      </div>
     </div>
 
-    <div class="result-container" id="priceListContainer">
-      <h3>Sorted Prices</h3>
-      <ul id="priceList"></ul>
-			<script src="popup.js"></script>
-    </div>
-
-
-  </div>
-  
-  <script src="background.js"></script>
-</body>
+    <script src="background.js"></script>
+  </body>
 </html>

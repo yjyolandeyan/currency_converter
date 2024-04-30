@@ -47,41 +47,68 @@ function convertCurrency() {
   });
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("submit");
-  submitButton.addEventListener("click", function() {
+  submitButton.addEventListener("click", function () {
     convertCurrency();
-    displaySortedPrices();
-  });
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, {type: "getPrices"}, function(response) {
-        const priceList = document.getElementById('priceList');
-        if (response && response.prices) {
-            response.prices.forEach(price => {
-                let li = document.createElement('li');
-                li.textContent = price;
-                priceList.appendChild(li);
-            });
-        } else {
-            priceList.textContent = 'No prices found.';
-        }
-    });
+    displayPriceRange();
   });
 });
 
-function displaySortedPrices() {
-  chrome.storage.local.get(["prices"], function(result) {
-    if (result.prices) {
-      const priceList = document.getElementById("priceList");
-      priceList.innerHTML = '';
-      result.prices.forEach(price => {
-        let listItem = document.createElement("li");
-        listItem.textContent = `${price.toFixed(2)}`;
-        priceList.appendChild(listItem);
-      });
-    }
+function displayPriceRange() {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.sendMessage(
+      tabs[0].id,
+      { type: "getPrices" },
+      function (response) {
+        const priceRange = document.getElementById("priceRange");
+
+        if (response && response.prices && response.prices.length > 0) {
+          const prices = response.prices;
+
+          const minPrice = prices[0];
+          const maxPrice = prices[prices.length - 1];
+
+          chrome.storage.local.get(["conversionRate"], function (result) {
+            const toCurrency = document.getElementById("toCurrency").value;
+            if (result.conversionRate) {
+              const convertedMin = (minPrice * result.conversionRate).toFixed(
+                2
+              );
+              const convertedMax = (maxPrice * result.conversionRate).toFixed(
+                2
+              );
+
+              priceRange.textContent = `${convertedMin} - ${convertedMax} in ${toCurrency.toUpperCase()}`;
+            } else {
+              priceRange.textContent = "Conversion rate not available.";
+            }
+          });
+        } else {
+          priceRange.textContent = "No prices found.";
+        }
+      }
+    );
   });
 }
 
-
+function displaySortedPrices() {
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.sendMessage(
+      tabs[0].id,
+      { type: "getPrices" },
+      function (response) {
+        const priceList = document.getElementById("priceList");
+        if (response && response.prices) {
+          response.prices.forEach((price) => {
+            let li = document.createElement("li");
+            li.textContent = price;
+            priceList.appendChild(li);
+          });
+        } else {
+          priceList.textContent = "No prices found.";
+        }
+      }
+    );
+  });
+}
