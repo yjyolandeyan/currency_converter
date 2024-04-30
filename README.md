@@ -2,8 +2,6 @@
 This provides a Chrome extension meant to fetch the most up-to-date conversion ratio and can get the new price with the click of a button. Click the icon to select the your base and target currency, then you can get the new price by highlighting any price on a webpage. 
 
 
-2024 Update
-
 # Install
 
 Download this repository, unzip, and drag the currency-converter folder to your Chrome extension panel at chrome://extensions.
