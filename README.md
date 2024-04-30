@@ -4,6 +4,9 @@ This provides a Chrome extension meant to fetch the most up-to-date conversion r
 
 Akanksha Tripathy, Ruth Tilahun, Tianyi Wu, Yola Yan
 
+# Website
+https://yjyolandeyan.github.io/currency_converter_deployed/
+
 # Install
 
 Download this repository, unzip, and drag the currency-converter folder to your Chrome extension panel at chrome://extensions.
