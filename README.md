@@ -7,9 +7,17 @@ Akanksha Tripathy, Ruth Tilahun, Tianyi Wu, Yola Yan
 # Website
 https://yjyolandeyan.github.io/currency_converter_deployed/
 
-# Install
+# How to Install
 
-Download this repository, unzip, and drag the currency-converter folder to your Chrome extension panel at chrome://extensions.
+1. Download this repository, unzip this file.
+2. Go to chrome://extensions/, click on "Load Unpacked", and choose the downloaded currency-converter folder to your Chrome extension. 
+3. Now, under "All Extensions", a new extenion called Currency Converter should occur. See image below.
+<img width="443" alt="Screenshot 2024-04-30 at 6 48 09 PM" src="https://github.com/yjyolandeyan/currency_converter/assets/158221697/cf40b71a-e16d-4326-a906-fa7920177181">
+4. Now, on the right corner of the chrome bar, click the logo that looks like a puzzle. Click the pin for Currency Converter, so the logo will appear on the chrome extension bar.
+ <img width="331" alt="Screenshot 2024-04-30 at 6 50 10 PM" src="https://github.com/yjyolandeyan/currency_converter/assets/158221697/973ad802-59e7-40d5-ba87-3065c2bd8a86">
+5. Then, go on any page you are interested in, say Amazon. Click on the Currency Extension logo from the chrome extensions bar, and enter the "from currency" and "to currency" you are interested in. Both lowercase and uppercase are fine. Then, click "Submit", and the conversion ratio will occur below "Submit" so does the range of prices on the given page.
+![WechatIMG23187](https://github.com/yjyolandeyan/currency_converter/assets/158221697/624d3518-89ee-49c6-aee2-0a7cd7957f98)
+
 
 # Why?
 
