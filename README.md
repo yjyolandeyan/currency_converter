@@ -22,7 +22,11 @@ https://yjyolandeyan.github.io/currency_converter_deployed/
 7. Then, go on any page you are interested in, say Amazon. Click on the Currency Extension logo from the chrome extensions bar, and enter the "from currency" and "to currency" you are interested in. Both lowercase and uppercase are fine. Then, click "Submit", and the conversion ratio will occur below "Submit" so does the range of prices on the given page.
  <img width="331" alt="Screenshot 2024-04-30 at 6 50 10 PM" src="https://github.com/yjyolandeyan/currency_converter/assets/158221697/30f87247-1e98-47a0-b5e9-d27bf44f2d32">
 
+8. When you highlight a numerical price, a popup box will appear on top of the price you selected, with the converted price in the new currency.
 
+<img width="540" alt="Screenshot 2024-04-30 at 6 55 29 PM" src="https://github.com/yjyolandeyan/currency_converter/assets/158221697/c89e7377-c025-42fd-b786-d82c147058e5">
+
+Thank you so much for using our chrome extension and we hope you like it.
 
 # Why?
 
