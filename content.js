@@ -60,7 +60,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (matches) {
       var matchesFiltered = matches.map((match) => match.replaceAll(",", ""));
       matchesFiltered = matches.map((match) => match.replaceAll("$", ""));
-      const sortedPrices = [...new Set(matchesFiltered)].sort((a, b) => a - b);
+      const filterdPrice = matchesFiltered.filter((price) => price >= 5);
+      const sortedPrices = [...new Set(filterdPrice)].sort((a, b) => a - b);
       sendResponse({ prices: sortedPrices });
     } else {
       sendResponse({ prices: null });

@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", function () {
     convertCurrency();
     displayPriceRange();
+    displaySortedPrices();
   });
 });
 
@@ -98,15 +99,108 @@ function displaySortedPrices() {
       tabs[0].id,
       { type: "getPrices" },
       function (response) {
-        const priceList = document.getElementById("priceList");
+        const priceListElement = document.getElementById("priceList");
+
         if (response && response.prices) {
-          response.prices.forEach((price) => {
-            let li = document.createElement("li");
-            li.textContent = price;
-            priceList.appendChild(li);
+          chrome.storage.local.get(["conversionRate"], function (result) {
+            if (result.conversionRate) {
+              const conversionRate =
+                Math.round(result.conversionRate * 100) / 100;
+
+              const prices = response.prices.map(
+                (price) =>
+                  Math.round(parseFloat(price) * conversionRate * 100) / 100
+              );
+
+              const minPrice = Math.min(...prices);
+              const maxPrice = Math.max(...prices);
+
+              const numRanges = Math.ceil(prices.length / 6);
+
+              const rangeSize = (maxPrice - minPrice) / numRanges;
+              const ranges = Array.from(
+                { length: numRanges + 1 },
+                (_, i) => minPrice + i * rangeSize
+              );
+
+              const rangeCounts = new Array(numRanges).fill(0);
+              prices.forEach((price) => {
+                const index = Math.min(
+                  Math.floor((price - minPrice) / rangeSize),
+                  numRanges - 1
+                );
+                rangeCounts[index]++;
+              });
+
+              // Setup canvas
+              const canvas = document.getElementById("priceBoxPlot");
+              const ctx = canvas.getContext("2d");
+
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+              const margin = 20; // Reduce margin for more space
+              const plotWidth = canvas.width - 3 * margin;
+              const plotHeight = canvas.height - 2 * margin;
+
+              const barWidth = plotWidth / numRanges - 6; // 6px spacing
+
+              const maxCount = Math.max(...rangeCounts);
+
+              const countToY = (count) =>
+                margin + plotHeight * (1 - count / maxCount);
+
+              // Draw bars
+              ctx.fillStyle = "#3c9bd9";
+              rangeCounts.forEach((count, i) => {
+                const barLeft = margin + i * (barWidth + 6); // Include spacing
+                const barTop = countToY(count);
+                const barHeight = plotHeight - (barTop - margin);
+
+                ctx.fillRect(barLeft, barTop, barWidth, barHeight);
+              });
+
+              // Draw axis lines
+              ctx.lineWidth = 1.5;
+              ctx.strokeStyle = "#555";
+              ctx.beginPath();
+              ctx.moveTo(margin, plotHeight + margin);
+              ctx.lineTo(canvas.width - margin, plotHeight + margin);
+              ctx.stroke();
+
+              ctx.beginPath();
+              ctx.moveTo(margin, margin);
+              ctx.lineTo(margin, canvas.height - margin);
+              ctx.stroke();
+
+              // Label axes
+              ctx.font = "8px Arial";
+              ctx.fillStyle = "#000";
+
+              // Label x-axis ranges
+              ranges.forEach((range, i) => {
+                const labelX = margin + i * (barWidth + 6); // Include spacing
+                ctx.fillText(
+                  range.toFixed(2),
+                  labelX,
+                  plotHeight + margin + 20
+                );
+              });
+
+              ctx.fillText(
+                "Price Ranges",
+                margin + plotWidth / 2,
+                canvas.height - 10
+              );
+
+              ctx.rotate(-Math.PI / 2);
+              ctx.fillText("Frequency", -plotHeight / 2 - margin, 15);
+              ctx.rotate(Math.PI / 2);
+            } else {
+              priceRange.textContent = "Conversion rate not available.";
+            }
           });
         } else {
-          priceList.textContent = "No prices found.";
+          priceListElement.textContent = "No prices found.";
         }
       }
     );
