@@ -26,22 +26,17 @@ https://yjyolandeyan.github.io/currency_converter_deployed/
 
 <img width="540" alt="Screenshot 2024-04-30 at 6 55 29 PM" src="https://github.com/yjyolandeyan/currency_converter/assets/158221697/c89e7377-c025-42fd-b786-d82c147058e5">
 
-Thank you so much for using our chrome extension and we hope you like it.
+Thank you so much for using our Chrome extension and we hope you like it.
 
 # Why?
 
 Our Chrome Extension solves the inconvenience, time-consuming nature, and accuracy concerns associated with manually converting currencies while browsing the internet. By seamlessly integrating into the browser, it provides real-time conversion rates, a user-friendly interface, and customization options for preferences. Users can now quickly and accurately convert currencies without leaving their current webpage, significantly enhancing their browsing experience.
 
-
 ## Problem Statement 
-
-[Describe the problem that your Chrome Extension will solve. What are the pain points that users experience? How does your extension address these pain points?]
 
 Our Chrome Extension solves the inconvenience, time-consuming nature, and accuracy concerns associated with manually converting currencies while browsing the internet. By seamlessly integrating into the browser, it provides real-time conversion rates, a user-friendly interface, and customization options for preferences. Users can now quickly and accurately convert currencies without leaving their current webpage, significantly enhancing their browsing experience.
 
 ## Target Audience 
-
-[Identify the target audience for your Chrome Extension. Who will benefit from using your extension? What are the main characteristics of your target audience?]
 
 The target audience for our Chrome Extension includes:
 
@@ -53,11 +48,7 @@ The target audience for our Chrome Extension includes:
 
 - People living in a country with a different currency than their home country, who need to convert currencies for daily transactions.
 
-
-
 ## Description 
-
-[Provide a general description of your Chrome Extension idea in 2-3 sentences. Explain the main purpose and functionality of the extension.]
 
 Our Chrome Extension is a convenient currency converter that seamlessly integrates into your browsing experience. With real-time conversion rates and a user-friendly interface, it allows users to quickly and accurately convert currencies without leaving their current webpage. Whether you're shopping online, planning a trip, or conducting business transactions, our extension streamlines the currency conversion process, enhancing your browsing experience significantly.
 
@@ -71,8 +62,6 @@ Our Chrome Extension is a convenient currency converter that seamlessly integrat
 
 
 ## User Stories 
-
-_[List user stories that describe the main features of your Chrome Extension. Use the following template: "As a [user role], I want to [goal] so that [benefit]." Fill in the brackets with the appropriate information. Provide 15 user stories or more.]_
 
 1. As a busy professional trader, I frequently browse international news websites to stay updated on global events. With the currency converter Chrome Extension seamlessly integrated into my browser, I can quickly convert currency values mentioned in articles without interrupting my reading flow, making it convenient to understand financial news from around the world.
 
@@ -116,8 +105,6 @@ We were inspired by the Currency Converter Widget Chrome extension which already
 
 This extension will also be used to guide our UI improvements, since we will identify pain points in existing extensions and use them to improve our own extension. 
 
-
-
 ## Technical Details
 
 ### User Interface 
@@ -133,10 +120,6 @@ Users will interact with the extension primarily by inputting the source currenc
 
 ### API, Libraries, and Frameworks
 
-_[- List any APIs, libraries, or frameworks that you plan to use in your Chrome Extension.]_
-_[- Include links to the documentation or other relevant resources.]_
-_[- Explain very briefly how you will use these tools in your project, one sentence per item.]_
-
 For this Chrome Extension, we plan to use the Google Finance API to obtain currency ratios on specific dates.
 
 Google Finance API: Documentation, Yahoo Finance API
@@ -151,13 +134,9 @@ We may need to store the last used currencies involved in conversion for ease of
 
 ### Collaboration and Task Allocation
 
-_[Select a Leader, who will make final decisions on the vision of the project; and a Manager, who will oversee the project management and ensure all team members have everything they need to contribute effectively. List the remaining team members and their roles.]_
-
 - **Leader:** Tianyi Wu
 - **Manager:** Akanksha Tripathy
 - **Remaining Team Members:** Yola Yan, Ruth Tilahun
-
-_[Provide a brief overview of what each team member will work on. How will you collaborate on this project? What tools or platforms will you use to communicate and share code?]_
 
 ### Risks and Mitigation 
 
