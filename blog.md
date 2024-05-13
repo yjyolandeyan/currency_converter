@@ -19,7 +19,7 @@ The goal of our project was to create a Chrome extension that would provide real
 We adopted agile methodologies, holding regular meetings to discuss progress and challenges. This approach ensured that everyone was on the same page and could contribute effectively.
 
 ## How to Install the Currency Converter Extension
-1. **Download the Repository**: Download ![the repository](https://github.com/yjyolandeyan/currency_converter) and unzip the file.
+1. **Download the Repository**: Download [the repository](https://github.com/yjyolandeyan/currency_converter) and unzip the file.
 2. **Load the Extension in Chrome**:
    - Open Chrome and navigate to `chrome://extensions/`.
    - Click on "Load Unpacked" and select the unzipped currency-converter folder.
@@ -63,7 +63,7 @@ Working on this Chrome extension was an incredible learning experience for all o
 For more details and updates, visit our [project website](https://yjyolandeyan.github.io/currency_converter_deployed/).
 
 ## Special Thanks
-We would like to extend a special thanks to ![Professor Lumbroso](https://github.com/jlumbroso/) for his unwavering support and care for our team. His guidance and encouragement were invaluable in helping us complete this project successfully.
+We would like to extend a special thanks to [Professor Lumbroso](https://github.com/jlumbroso/) for his unwavering support and care for our team. His guidance and encouragement were invaluable in helping us complete this project successfully.
 
 ---
 
