@@ -102,7 +102,7 @@ Since many variations of this Chrome extension already exist, it may be challeng
 
 ## References & Inspiration 
 
-We were inspired by the Currency Converter Widget Chrome extension which already exists, as a guideline of the general features which we want to include for our own Chrome extension. While we are not aiming to replicate this fully, we want to make sure we include the features that already exist in this extension and build upon them for our own project. The extension can be found [here](https://chromewebstore.google.com/detail/currency-converter-widget/bnpalipgomknhgbmgelaplknnmckljaf)
+We were inspired by the Currency Converter Widget Chrome extension which already exists, as a guideline of the general features which we want to include for our own Chrome extension. While we are not aiming to replicate this fully, we want to make sure we include the features that already exist in this extension and build upon them for our own project. The extension can be found [here](https://chromewebstore.google.com/detail/currency-converter-widget/bnpalipgomknhgbmgelaplknnmckljaf).
 
 This extension will also be used to guide our UI improvements, since we will identify pain points in existing extensions and use them to improve our own extension. 
 
