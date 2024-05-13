@@ -5,7 +5,7 @@ This provides a Chrome extension meant to fetch the most up-to-date conversion r
 Akanksha Tripathy, Ruth Tilahun, Tianyi Wu, Yola Yan
 
 # Website
-![Here](https://yjyolandeyan.github.io/currency_converter_deployed/) is the extension website.
+![Here](https://yjyolandeyan.github.io/currency_converter_deployed) is the extension website.
 
 # How to Install
 
