@@ -42,13 +42,19 @@ We adopted agile methodologies, holding regular meetings to discuss progress and
 
 ## Challenges and Learning
 Throughout the project, we inevitably faced some challenges:
-- **Technical Hurdles**: Some code worked well in testing but needed adjustments when integrated into the extension.
+- **Technical Hurdles**: Some code worked well in testing but needed adjustments when integrated into the extension. 
 - **Managing Data**: Storing and managing data across different parts of the extension was more complex than anticipated.
 - **API Limitations**: We encountered restrictions on the number of requests we could make to the currency converter API, which also required user authentication.
 - **Price Detection**: Detecting and converting prices on web pages had its difficulties, especially with varying formats and larger numbers.
 - **Time Management**: Balancing this project with our other academic responsibilities and conflicting schedules was challenging.
 
 Despite these challenges, we learned valuable lessons in teamwork, problem-solving, and software development. Each team member brought unique skills and perspectives, which enriched the project and helped us overcome obstacles.
+
+Most of our members only had experience working on backend, so javascript was a completely new language for us. Starting with the Google chrome's extension tutorial such as "hello world": https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world was really helpful, since it teaches us how extensions are written, what are the main components of each chrome extension, and how should we test it. 
+
+We highly recommend first divide the components of your project first and do not implement all parts together since it will make it extemely hard to test. For ours, we have API key access (fetch converstion rate), dropout box with new price, and graph that shows the range of prices. Javascript has some limitations for sure, so make sure that instead of aiming to have the final expected output right away, you are actually printing out all the necessary information along the way to be able to test it out. 
+
+In terms of challenges, we learned that talking to AI such as ChatGPT and Claude is very helpful. Forming conversations with AI is an essential skill where you must be very patient in telling it what you are working on, what you have so far, and what you are asking their help with. It can be explanation of a code snippet that you do not understand, or it can be asking it to debug your code for you. Either way, disset the question into smaller pieces and then learning from the AI is very helpful to improve our learning along the way. 
 
 ## Future Plans
 We are proud of what we have accomplished, but we also see room for improvement and expansion:
