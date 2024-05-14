@@ -131,14 +131,6 @@ Explanation: We will use the Google Finance or Yahoo Finance API to fetch histor
 
 We may need to store the last used currencies involved in conversion for ease of the user, especially if they tend to use just a few of the currency options and do not need to scroll through the full dropdown menu. Additionally, it may be useful to store past transactions and conversions, in case a user wants to view the last value they obtained. We may be able to use a simple relational database to store this data in the backend.
 
-## Project Management
-
-### Collaboration and Task Allocation
-
-- **Leader:** Tianyi Wu
-- **Manager:** Akanksha Tripathy
-- **Remaining Team Members:** Yola Yan, Ruth Tilahun
-
 ### Risks and Mitigation 
 
 Risks:
