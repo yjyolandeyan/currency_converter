@@ -34,7 +34,7 @@ Akanksha Tripathy, Ruth Tilahun, Tianyi Wu, Yola Yan
 Thank you so much for using our Chrome extension and we hope you like it.
 
 # Blog Post 
-[Here] is the link to our blog post.
+[Here](https://medium.com/@yjy_5272/cis3500-group7-blog-post-27d0aaaecbcb) is the link to our blog post.
 
 # Contact
 If you would like to report any issues, please, feel free to open an issue [here](https://github.com/yjyolandeyan/currency_converter/issues).
@@ -159,3 +159,5 @@ If things don't go as expected, the contingency plan may involve:
   
 ## Special Thanks
 We would like to thank Professor Jérémie Lumbroso for his mentorship throughout the development of this project. 
+
+Happy coding!
