@@ -157,3 +157,5 @@ If things don't go as expected, the contingency plan may involve:
 - Prioritizing the main features and functionalities to ensure that the core functionality of the extension is implemented on time.
 - Considering alternative approaches or simplifications to meet the project deadline while maintaining the core value proposition of the extension.
   
+## Special Thanks
+We would like to thank Professor Jérémie Lumbroso for his mentorship throughout the development of this project. 
