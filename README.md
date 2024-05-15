@@ -2,7 +2,7 @@
 This provides a Chrome extension meant to fetch the most up-to-date conversion ratio and can get the new price with the click of a button. Click the icon to select the your base and target currency, then you can get the new price by highlighting any price on a webpage. 
 
    
-<img width="331" alt="Screenshot 2024-04-30 at 6 48 09 PM" src="[https://github.com/yjyolandeyan/currency_converter/assets/158221697/cf40b71a-e16d-4326-a906-fa7920177181](https://github.com/yjyolandeyan/currency_converter/assets/158221697/d490e21e-cb42-4d0f-8943-8a85d87821a0)">
+<img width="331" alt="Screenshot 2024-04-30 at 6 48 09 PM" src="https://github.com/yjyolandeyan/currency_converter/assets/158221697/d490e21e-cb42-4d0f-8943-8a85d87821a0">
 
 ## Authors
 
