@@ -1,5 +1,8 @@
-# Chrome Extension Idea: Currency Converter
+# Chrome Extension: Currency Converter
 This provides a Chrome extension meant to fetch the most up-to-date conversion ratio and can get the new price with the click of a button. Click the icon to select the your base and target currency, then you can get the new price by highlighting any price on a webpage. 
+
+![home-logo](https://github.com/yjyolandeyan/currency_converter/assets/158221697/d490e21e-cb42-4d0f-8943-8a85d87821a0)
+
 ## Authors
 
 Akanksha Tripathy, Ruth Tilahun, Tianyi Wu, Yola Yan
@@ -8,7 +11,7 @@ Akanksha Tripathy, Ruth Tilahun, Tianyi Wu, Yola Yan
 
 [Here](https://yjyolandeyan.github.io/currency_converter_deployed) is the extension website.
 
-# How to Install
+# How to Install & Use our Extension
 
 1. Download this repository, unzip this file.
 2. Go to chrome://extensions/, click on "Load Unpacked", and choose the downloaded currency-converter folder to your Chrome extension. 
@@ -28,6 +31,12 @@ Akanksha Tripathy, Ruth Tilahun, Tianyi Wu, Yola Yan
 <img width="540" alt="Screenshot 2024-04-30 at 6 55 29 PM" src="https://github.com/yjyolandeyan/currency_converter/assets/158221697/c89e7377-c025-42fd-b786-d82c147058e5">
 
 Thank you so much for using our Chrome extension and we hope you like it.
+
+# Blog Post 
+[Here] is the link to our blog post.
+
+# Contact
+If you would like to report any issues, please, feel free to open an issue [here](https://github.com/yjyolandeyan/currency_converter/issues).
 
 # Why?
 
